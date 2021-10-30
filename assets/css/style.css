@@ -29,6 +29,11 @@
 .p-1 {
   padding: 0.25rem;
 }
+.bg-green-200 {
+  --tw-bg-opacity: 1;
+  background-color: deepskyblue;
+}
+
 .bg-blue-900 {
   --tw-bg-opacity: 1;
   background-color: rgba(30, 58, 138, var(--tw-bg-opacity));
