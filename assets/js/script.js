@@ -165,6 +165,31 @@ function clearContents() {
   }
 }
 
+//Save the list of previously searched cities in the localstorage
+function saveHistory() {
+  if (!cityArr.includes(cityName)) {
+    cityArr.unshift(cityName);
+  }
+  //Limit the list of cities to 10 by popping the oldest city
+  if (cityArr.length > 10) {
+    cityArr.pop();
+  }
+  localStorage.setItem("savedCities", JSON.stringify(cityArr));
+}
+
+//Return the weather icon based on the weather condition
+function iconClass(condition) {
+  if (condition == "Clouds") {
+    return "wi wi-cloudy";
+  } else if (condition == "Clear") {
+    return "wi wi-day-sunny";
+  } else if (condition == "Haze") {
+    return "wi wi-smog";
+  } else if (condition == "Rain") {
+    return "wi wi-rain";
+  }
+}
+
 //If the search button is clicked, get the city name from the input
 //and store it in the global variable and run the getWeather function
 $(".container").on("click", "#submitcity", function () {
