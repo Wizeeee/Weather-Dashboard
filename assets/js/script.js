@@ -50,7 +50,7 @@ function getWeather() {
         });
       });
     } else {
-      alert("choose a valid city");
+      alert("Choose a valid city");
     }
   });
 }
